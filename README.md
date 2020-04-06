@@ -2,6 +2,7 @@
 To start and run the project:
 
 Step 1: npm install
+
 Step 2: npm start
 
 The url of the project:
