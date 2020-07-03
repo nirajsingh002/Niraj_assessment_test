@@ -50,6 +50,11 @@
 .listContainer {
     background-color: #000000;
     color: #ffffff;
+    margin-top: 20px;
+}
+.alignRightMiddle {
+    float: right;
+    margin-top: 10px;
 }
 .tiles {
     background-color: #333333;
@@ -94,3 +99,7 @@
     color: #a16419
 }
 
+.selectedFilter > li > span{
+    cursor: pointer;
+    margin-left: 5px;
+}
