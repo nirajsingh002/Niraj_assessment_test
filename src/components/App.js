@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
-import injectSheet, { ThemeProvider, } from "react-jss";
-
+import { ThemeProvider, } from "react-jss";
 import ListingContainer from './containers/ListingContainer';
-import SearchBox from './containers/SearchBox';
+import PropTypes from 'prop-types';
 // bootstrap common css 
 import './App.css'
-// reusable components
-import Reusables from '../jss/reusables/inputs';
-
-// styles
-import LayoutStyles from '../jss/reusables/styles/layout';
-import ColumnStyles from '../jss/reusables/styles/column';
 
 // themes
 import defaulttheme from '../jss/reusables/styles/themes/default'
@@ -38,17 +31,10 @@ class App extends Component {
         this.props.fetchPostsIfNeeded()
       }
 
-      /* componentWillReceiveProps(prevProps) {
-        if (this.props.cartoonCharacters.items[0].id !== prevProps.cartoonCharacters.items[0].id) {
-            this.props.fetchPostsIfNeeded()
-        }
-      } */
-
+      
     render() {
         // each of these inject methods creates reusable elements from the Resuables and injects with the style from theme
         const { cartoonCharacters } = this.props;
-        const LayoutComponent = injectSheet(LayoutStyles)(Reusables.Layout)
-        const ColumnComponent = injectSheet(ColumnStyles)(Reusables.Column)
         return (
             <ThemeProvider theme={this.state.theme}>
                 <div className="container-fluid">
@@ -65,6 +51,10 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    fetchPostsIfNeeded: PropTypes.func,
+    cartoonCharacters: PropTypes.func
+  };
 
 const mapStateToProps = (state) => {
     return {

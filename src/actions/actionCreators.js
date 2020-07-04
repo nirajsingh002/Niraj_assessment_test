@@ -29,13 +29,6 @@ function receiveCharacters(characterJson) {
   };
 }
 
-export const INVALIDATE_CHARACTER = "INVALIDATE_CHARACTER";
-function invalidateCharacter(character) {
-  return {
-    type: INVALIDATE_CHARACTER,
-    character,
-  };
-}
 
 function shouldFetchPosts(state) {
     const characters = state.fetchCharacters

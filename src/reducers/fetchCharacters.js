@@ -39,7 +39,7 @@ const fetchCharacters = (
         
       return Object.assign({}, state, {items: action.data.items});
     case 'SEARCH_BY_NAME':
-        
+        {
         // Variable to hold the original version of the list
           let currentList = [];
           // Variable to hold the filtered list before putting into state
@@ -66,19 +66,21 @@ const fetchCharacters = (
           }
           // Set the filtered state based on what our rules added to newList
           return Object.assign({}, state, {filtered: newList})
+        }
       case 'REMOVE_FILTER':
-      case 'CHECKED_ITEMS_FN':
+      case 'CHECKED_ITEMS_FN': {
         let { checkedItems } = state;
               checkedItems.indexOf(action.item) === -1 && action.isChecked ? checkedItems.push(action.item) : checkedItems = checkedItems.filter(item => item !== action.item);
           return Object.assign({}, state, {checkedItems} )
-
+      }
       case 'FILTERED_DATA':
+        {
           // filter by data
           let filterBy = action.filterBy
           // Variable to hold the original version of the list
-          currentList = [];
+          let currentList = [];
           // Variable to hold the filtered list before putting into state
-          newList = [];
+          let newList = [];
           if(state.checkedItems.length) {
             // assign the original list to currentList
             currentList = state.filtered.length ? state.filtered : state.items;
@@ -108,6 +110,7 @@ const fetchCharacters = (
         }
         // Set the filtered state based on what our rules added to newList
         return Object.assign({}, state, {filtered: newList})
+      }
     default:
       return state;
   }
