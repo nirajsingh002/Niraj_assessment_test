@@ -1,9 +1,10 @@
 export const FILTERED_DATA = "FILTERED_DATA";
 
-export function filteredData(filterBy) {
+export function filteredData(filterBy, isChecked) {
   return {
       type: 'FILTERED_DATA',
-      filterBy
+      filterBy,
+      isChecked
   }
 }
 

@@ -53,10 +53,11 @@ class App extends Component {
 
 App.propTypes = {
     fetchPostsIfNeeded: PropTypes.func,
-    cartoonCharacters: PropTypes.func
+    cartoonCharacters: PropTypes.object
   };
 
 const mapStateToProps = (state) => {
+    console.log('App', state);
     return {
         cartoonCharacters: state.fetchCharacters,
     }

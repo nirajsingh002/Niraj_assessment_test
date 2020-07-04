@@ -21,14 +21,28 @@ class Filters extends Component {
     const filterBy = e.target.getAttribute("filterBy");
 
     this.props.filtersProps.data.checkedItemsFn(item, isChecked, filterBy);
-    this.props.filtersProps.data.filteredData(filterBy);
+    this.props.filtersProps.data.filteredData(filterBy, isChecked);
   };
+
+  toggleFilterItems = (groupHeading, checkedItems, groupItem) => {
+    let isChecked = false;
+    Object.keys(checkedItems).forEach((filterCategory) => {
+      if(filterCategory === groupHeading) {
+        isChecked = checkedItems[filterCategory].includes(
+                      groupItem.label.toLowerCase()
+                    )
+                    console.log('isChecked',checkedItems[filterCategory], isChecked)
+      }
+    })
+    return isChecked;
+  }
 
   filterHtml = (checkedItems) => {
     return checkboxes.map((groupName, groupNameIndex) =>
-      Object.keys(groupName).map((groupHeading) => {
+      Object.keys(groupName).map((groupHeading, groupHeadingIndex) => {
         return (
-          <>
+          <div key={`${groupNameIndex}_${groupHeadingIndex
+          }`}>
             <h2>{groupHeading}</h2>
             <ul key={groupNameIndex}>
               {checkboxes[groupNameIndex][groupHeading].map(
@@ -38,9 +52,7 @@ class Filters extends Component {
                       <label>
                         <Checkbox
                           name={groupItem.label}
-                          checked={checkedItems.includes(
-                            groupItem.label.toLowerCase()
-                          )}
+                          checked={this.toggleFilterItems(groupHeading, checkedItems, groupItem)}
                           filterBy={groupHeading}
                           onChange={this.handleChange}
                         />
@@ -51,7 +63,7 @@ class Filters extends Component {
                 }
               )}
             </ul>
-          </>
+          </div>
         );
       })
     );

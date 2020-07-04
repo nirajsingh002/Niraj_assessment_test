@@ -32,9 +32,9 @@ class SearchBox extends Component {
             <>
                 <div>Selected Filter</div>
                 <ul className="selectedFilter">
-                {this.props.searchProps.data.cartoonCharacters.checkedItems.map((item) => {
+                {/* {this.props.searchProps.data.cartoonCharacters.checkedItems.map((item) => {
                     return (<li>{item}<span onClick={() => this.onClickremoveFilter(item, false)}>X</span></li>)
-                })}
+                })} */}
                 </ul>
                 <div className="mBottom10">
                     <form onSubmit={this.handleSubmit} key="1">
