@@ -56,6 +56,13 @@
     float: right;
     margin-top: 10px;
 }
+@media (max-width: 768px) {
+    .alignRightMiddle {
+    float: none;
+    margin: 10px 0;
+    width: 100%;
+    }
+}
 .tiles {
     background-color: #333333;
 }
@@ -63,12 +70,13 @@
     position: relative;
 }
 .imageBox > img{
-    width: 250px;
+    width: 100%;
     height: auto;
     border-radius: 5px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
 
 .ImgDescription {
     position: absolute;
@@ -102,4 +110,7 @@
 .selectedFilter > li > span{
     cursor: pointer;
     margin-left: 5px;
+}
+.mBottom10 {
+    margin-bottom: 10px;
 }

@@ -14,6 +14,10 @@ const ColumnStyles = (size, columns = grid_columns) => ({
           width: "100%",
           "padding-right": "15px",
           "padding-left": "15px",
+          '@media (max-width: 768px)': {
+              "max-width": "100%",
+              flex: "0 0" + 100 + "%",
+          }
         }
       : {
           "-ms-flex-preferred-size": 0,

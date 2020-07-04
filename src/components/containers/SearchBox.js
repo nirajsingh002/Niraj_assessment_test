@@ -36,7 +36,7 @@ class SearchBox extends Component {
                     return (<li>{item}<span onClick={() => this.onClickremoveFilter(item, false)}>X</span></li>)
                 })}
                 </ul>
-                <div>
+                <div className="mBottom10">
                     <form onSubmit={this.handleSubmit} key="1">
                         <label>
                             Search by Name:
