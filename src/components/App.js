@@ -31,7 +31,6 @@ class App extends Component {
         this.state = {
             theme: defaulttheme,
         }
-        console.log('props', this.props)
     }
 
     componentDidMount() {
@@ -68,7 +67,6 @@ class App extends Component {
 
 
 const mapStateToProps = (state) => {
-    console.log('app component', state)
     return {
         cartoonCharacters: state.fetchCharacters,
     }

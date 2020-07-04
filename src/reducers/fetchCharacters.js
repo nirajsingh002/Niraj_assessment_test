@@ -31,15 +31,15 @@ const fetchCharacters = (
       });
       case "SORT_ASCENDING":
         action.data.items.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
-        console.log("ASC", action.data.items);
+        
     return Object.assign({}, state, {items: action.data.items});
 
     case "SORT_DESCENDING":
       action.data.items.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)).reverse();
-        console.log("DESC", action.data.items);
+        
       return Object.assign({}, state, {items: action.data.items});
     case 'SEARCH_BY_NAME':
-        console.log('search by name triggred!')
+        
         // Variable to hold the original version of the list
           let currentList = [];
           // Variable to hold the filtered list before putting into state
@@ -108,12 +108,6 @@ const fetchCharacters = (
         }
         // Set the filtered state based on what our rules added to newList
         return Object.assign({}, state, {filtered: newList})
-        /* this.setState({
-            filtered: newList
-        }, () => {
-            console.log('A name was submitted: ', this.state.filtered);
-            this.sendData();
-        }) */
     default:
       return state;
   }

@@ -19,7 +19,6 @@ class ListingContainer extends Component {
       checkedItems: new Map(),
     };
     this.detailsList = this.detailsList.bind(this);
-    console.log('props of listing', this.props)
   }
 
   
@@ -36,21 +35,6 @@ class ListingContainer extends Component {
     ));
   }
   
-
-  
-
-  /* callbackFunction = (childData) => {
-    this.setState({ filtered: childData }, () => {
-      console.log("filtered parent", this.state.items);
-    });
-  }; */
-
-  callbackFunctionFilters = (childDataCheckbox) => {
-    this.setState({ checkedItems: childDataCheckbox }, () => {
-      console.log("check items", this.state.checkedItems);
-    });
-  };
-
   render() {
     const ColumnComponent = injectSheet(ColumnStyles)(Reusables.Column);
     const { isFetching, items } = this.props.data.cartoonCharacters;

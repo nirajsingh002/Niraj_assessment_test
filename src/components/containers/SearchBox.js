@@ -7,19 +7,8 @@ class SearchBox extends Component {
             value: '',
         }
         this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        console.log('searchBox', this.props)
     }
 
-    componentDidMount() {
-        this.setState({
-            filtered: this.state.filtered
-        }, () => {
-            console.log('filtered', this.state.filtered)
-        });
-    }
-
-    
     handleChange(event) {
         this.setState({value: event.target.value});
       }

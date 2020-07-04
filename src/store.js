@@ -18,10 +18,5 @@ const enhancers = compose(
 )
 const store = createStore(rootReducer, defaultState, enhancers);
 
-// export const history = syncHistoryWithStore(browserHistory, store);
-
-
-// store.dispatch(fetchCharacters()).then(() => console.log('store', store.getState()))
-
 
 export default store;
